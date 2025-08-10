@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>البرامج - Business Portal</title>
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-Xbg45MqvDIk1e563NLpGEulpX6AvL404DP+/iCgW9eFa2BqztiwTexswJo2jLMue"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header-full">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="header-video"
+        poster="./images/hero-img.jpg"
+      >
+        <source src="./images/hero-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <nav class="navbar py-3 navbar-expand-lg sticky-top">
+        <div
+          class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+        >
+          <a class="navbar-brand text-end" href="index.html">BUSINESS PORTAL</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto me-0 gap-3">
+              <div class="nav-link-wrapper">
+                <a class="nav-link" href="about.html">من نحن</a>
+              </div>
+              <div class="nav-link-wrapper">
+                <a class="nav-link" href="paths.html">المسارات</a>
+              </div>
+              <div class="nav-link-wrapper">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="programs.html"
+                  >البرامج</a
+                >
+              </div>
+              <div class="nav-link-wrapper">
+                <a class="nav-link" href="partners.html">الحلفاء</a>
+              </div>
+              <div class="nav-link-wrapper">
+                <button class="cta-button nav-cta">إبدأ رحلتك</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="programs" class="py-5 px-2 px-md-3">
+        <div class="container-fluid container-xl h-100">
+          <div class="row align-items-center justify-content-center h-100">
+            <div class="col-12 col-lg-8 text-center">
+              <h1 class="mb-3">البرامج</h1>
+              <h2 class="mb-3">
+                برامج تدريبية وتطويرية شاملة مصممة لتعزيز مهاراتك وقدراتك
+              </h2>
+              <p class="mx-auto mb-4" style="max-width: 600px">
+                نقدم مجموعة متنوعة من البرامج التدريبية المتخصصة التي تساعدك على
+                تطوير مهاراتك وتحقيق أهدافك المهنية.
+              </p>
+              <button class="cta-button">تصفح البرامج</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </header>
+  </body>
+  <!-- Custom JavaScript -->
+  <script src="js/script.js"></script>
+</html>
