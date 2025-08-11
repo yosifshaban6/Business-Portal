@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
 /* Primary color */
+
 :root {
   --bs-primary: #2f8eb5;
   --bs-secondary: #6c757d;
@@ -17,7 +18,17 @@
   --bs-body-color: #222;
   --nav-color: #fff;
   --bs-emphasis-color-rgb: #fff;
+  --primary-color: #17a085;
+  --primary-light: #1dcdb4;
+  --secondary-color: #2f8eb5;
+  --text-dark: #343a40;
+  --text-light: #f8f9fa;
+  --text-muted: #6c757d;
+  --bg-light: #f8f9fa;
+  --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
 }
+
 
 @media (min-width: 1200px) {
   .container-fluid,

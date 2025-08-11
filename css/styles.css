@@ -1,18 +1,14 @@
 /* ============================================= */
 /* ============== BASE & RESETS =============== */
 /* ============================================= */
-@import url('./main.css');
 
-:root {
-  --primary-color: #17a085;
-  --primary-light: #1dcdb4;
-  --secondary-color: #2f8eb5;
-  --text-dark: #343a40;
-  --text-light: #f8f9fa;
-  --text-muted: #6c757d;
-  --bg-light: #f8f9fa;
-  --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  --transition: all 0.3s ease;
+body {
+  font-family: var(--bs-font-sans-serif, 'Tajawal', sans-serif);
+  direction: rtl; /* index.html already has dir="rtl", this is safe fallback */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--bs-body-color, #222);
+  background-color: var(--bs-body-bg, #f4f6fa);
 }
 
 * {
@@ -173,7 +169,6 @@ main {
 h1 {
   font-size: 48px;
   font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
@@ -443,6 +438,32 @@ h2 {
   color: #fff;
 }
 
+/* Services Section */
+.path-card {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  flex-grow: 1;
+
+  img {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 1rem;
+  }
+
+  .path-content {
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+
+
 /* Footer */
 .footer {
   background: var(--text-dark);
@@ -457,7 +478,8 @@ h2 {
 }
 
 .footer a {
-  color: #adb5bd;
+
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -561,3 +583,5 @@ h2 {
     font-size: 14px;
   }
 }
+
+
