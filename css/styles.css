@@ -227,7 +227,11 @@ p {
 }
 
 .cta-button:hover {
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--primary-color)
+  );
 }
 
 .nav-cta {
@@ -257,7 +261,11 @@ p {
 .service-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-light)
+  );
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -286,7 +294,11 @@ p {
 .card-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -315,7 +327,11 @@ p {
 .value-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-light)
+  );
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -426,7 +442,11 @@ p {
 
 /* CTA Section */
 #cta {
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
   color: #fff;
   padding: 80px 0;
 }
@@ -475,8 +495,6 @@ p {
   }
 }
 
-
-
 /* Footer */
 .footer {
   background: var(--text-dark);
@@ -491,7 +509,6 @@ p {
 }
 
 .footer a {
-
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -556,7 +573,7 @@ p {
 /* ============================================= */
 @media (max-width: 768px) {
   h1 {
-    font-size: 36px;
+    /* font-size: px; */
   }
 
   .section-title {
@@ -585,7 +602,7 @@ p {
 
 @media (max-width: 576px) {
   h1 {
-    font-size: 28px;
+    font-size: 54px;
   }
 
   h2 {
@@ -601,5 +618,3 @@ p {
     font-size: 14px;
   }
 }
-
-
