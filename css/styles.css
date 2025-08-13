@@ -104,6 +104,11 @@ main {
   box-shadow: none !important;
 }
 
+.logo {
+  width: 250px;
+  height: auto;
+}
+
 /* Mobile Navigation */
 @media (max-width: 991.98px) {
   .nav-link {
@@ -121,6 +126,10 @@ main {
 
   .nav-link:after {
     display: none;
+  }
+
+  .logo {
+    width: 200px;
   }
 
   .navbar-collapse {
@@ -557,6 +566,11 @@ p {
   .stats-row {
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .logo {
+    width: 200px;
+    padding: 0;
   }
 
   .about-content {
