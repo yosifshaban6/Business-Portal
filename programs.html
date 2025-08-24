@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,6 +29,7 @@
 
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/programs.css" />
   </head>
   <body>
     <header class="header-full">
@@ -107,7 +108,390 @@
         </div>
       </main>
     </header>
+
+    <!-- Programs Section -->
+    <section class="programs-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="section-title">برامجنا الاستشارية</h2>
+            <p class="lead">اختر البرنامج الذي يناسب أهدافك التنموية</p>
+          </div>
+        </div>
+        
+        <!-- Program Filters -->
+        <div class="row">
+          <div class="col-12">
+            <div class="program-filter">
+              <button class="filter-btn active" data-filter="all">جميع البرامج</button>
+              <button class="filter-btn" data-filter="business">تطوير الأعمال</button>
+              <button class="filter-btn" data-filter="financial">التنمية المالية</button>
+              <button class="filter-btn" data-filter="development">التطوير الشخصي</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Programs Grid -->
+        <div class="row row-gap-3 row-gap-md-5 programs-container">
+          <!-- عقول وأموال -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/1dbcb4/ffffff?text=MONEY+AND+MINDS" alt="عقول وأموال">
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">عقول وأموال</h3>
+                <p class="program-desc">برنامج متكامل يجمع بين تطوير العقلية الاستثمارية والمهارات المالية لتحقيق النجاح في عالم الأعمال.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>8 أسابيع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-users"></i>
+                    <span>مجموعات صغيرة</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-certificate"></i>
+                    <span>شهادة معتمدة</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,200 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="1">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- BUSINESS GROUP -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/1d4e91/ffffff?text=BUSINESS+GROUP" alt="BUSINESS GROUP">
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">BUSINESS GROUP</h3>
+                <p class="program-desc">برنامج متخصص في بناء وتطوير مجموعات العمل الفعالة لتحقيق التكامل والنجاح المؤسسي.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>6 أسابيع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-laptop"></i>
+                    <span>أونلاين</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-certificate"></i>
+                    <span>شهادة معتمدة</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">950 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="2">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- منتجون -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/4caf50/ffffff?text=PRODUCTIVE" alt="منتجون">
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">منتجون</h3>
+                <p class="program-desc">برنامج يركز على تطوير مهارات الإنتاجية وزيادة الكفاءة في بيئة العمل لتحقيق أقصى استفادة من الوقت والموارد.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>10 أسابيع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>ورش عملية</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-certificate"></i>
+                    <span>شهادة معتمدة</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,500 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="3">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- الجائزة -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="development">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/ff9800/ffffff?text=THE+AWARD" alt="الجائزة">
+                <span class="program-category">التطوير الشخصي</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">الجائزة</h3>
+                <p class="program-desc">برنامج تحفيزي يهدف إلى تعزيز الأداء الفردي والمؤسسي من خلال نظام المكافآت والتقدير.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>4 أسابيع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-laptop"></i>
+                    <span>أونلاين</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-tasks"></i>
+                    <span>تمارين عملية</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">700 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="4">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- الأمان المالي IDS-7 -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="financial">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/9c27b0/ffffff?text=MONEY+SAFETY" alt="الأمان المالي IDS-7">
+                <span class="program-category">التنمية المالية</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">الأمان المالي IDS-7</h3>
+                <p class="program-desc">برنامج متخصص في تحقيق الاستقرار والأمان المالي من خلال استراتيجيات مدروسة وأدوات عملية.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>5 أسابيع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-users"></i>
+                    <span>مجموعات صغيرة</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-certificate"></i>
+                    <span>شهادة معتمدة</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,000 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="5">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- BUSINESS FAMILY -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/e91e63/ffffff?text=BUSINESS+FAMILY" alt="BUSINESS FAMILY">
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">BUSINESS FAMILY</h3>
+                <p class="program-desc">برنامج فريد يدمج بين قيم العائلة واستراتيجيات العمل لبناء مؤسسات عائلية ناجحة ومستدامة.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>7 أسابيع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>ورش عملية</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-certificate"></i>
+                    <span>شهادة معتمدة</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,100 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="6">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- BUSINESS DRIVER -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/607d8b/ffffff?text=BUSINESS+DRIVER" alt="BUSINESS DRIVER">
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">BUSINESS DRIVER</h3>
+                <p class="program-desc">برنامج قيادة الأعمال الذي يزودك بالمهارات والأدوات اللازمة لقيادة مؤسستك نحو النجاح والتميز.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>6 أسابيع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-users"></i>
+                    <span>مجموعات صغيرة</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-certificate"></i>
+                    <span>شهادة معتمدة</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,300 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="7">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- الخارطة - THE MAP -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="development">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/795548/ffffff?text=THE+MAP" alt="الخارطة - THE MAP">
+                <span class="program-category">التطوير الشخصي</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">الخارطة - THE MAP</h3>
+                <p class="program-desc">برنامج التخطيط الاستراتيجي الشخصي والمهني الذي يساعدك على رسم خارطة طريق لتحقيق أهدافك.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>8 أسابيع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-laptop"></i>
+                    <span>أونلاين</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-certificate"></i>
+                    <span>شهادة معتمدة</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,400 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="8">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- kards 4 -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="development">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/3f51b5/ffffff?text=KARDS+4" alt="kards 4">
+                <span class="program-category">التطوير الشخصي</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">kards 4</h3>
+                <p class="program-desc">برنامج التفكير الإبداعي وحل المشكلات باستخدام منهجية مبتكرة تعتمد على تقنيات التفكير البصري.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>5 أسابيع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>ورش عملية</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-certificate"></i>
+                    <span>شهادة معتمدة</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">900 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="9">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- البرنامج الشامل للترشيد والتنمية -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="financial">
+            <div class="program-card">
+              <div class="program-img">
+                <img src="https://placehold.co/600x400/009688/ffffff?text=MONEY+MANAGEMENT" alt="البرنامج الشامل للترشيد والتنمية">
+                <span class="program-category">التنمية المالية</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">البرنامج الشامل للترشيد والتنمية</h3>
+                <p class="program-desc">برنامج متكامل يجمع بين ترشيد الإنكار والتنمية المالية لتحقيق التوازن المالي والنمو المستدام.</p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>12 أسبوع</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-users"></i>
+                    <span>مجموعات صغيرة</span>
+                  </div>
+                  <div class="program-feature">
+                    <i class="fas fa-certificate"></i>
+                    <span>شهادة معتمدة</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">2,000 ر.س</div>
+                  <a href="#" class="program-btn" data-bs-toggle="modal" data-bs-target="#programModal" data-program="10">التفاصيل</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Details Modal -->
+    <div class="modal fade" id="programModal" tabindex="-1" aria-labelledby="programModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="programModalLabel">تفاصيل البرنامج</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img id="modal-program-img" src="" alt="برنامج" class="img-fluid rounded mb-3">
+                <div class="program-price mb-3" id="modal-program-price"></div>
+              </div>
+              <div class="col-md-6">
+                <h3 id="modal-program-title"></h3>
+                <p id="modal-program-desc" class="text-muted"></p>
+                
+                <h5 class="mt-4">مميزات البرنامج:</h5>
+                <div id="modal-program-features"></div>
+                
+                <h5 class="mt-4">محاور البرنامج:</h5>
+                <ul id="modal-program-topics" class="list-group list-group-flush"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+            <button type="button" class="btn btn-primary">سجل الآن</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/script.js"></script>
+    <script src="js/programs.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
