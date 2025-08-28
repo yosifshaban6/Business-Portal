@@ -1,7 +1,54 @@
+/* Main Content */
+#programs {
+  position: relative;
+  z-index: 1;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+#programs h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#programs h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
 /* Programs Section Styles */
 .programs-section {
   padding: 80px 0;
   background-color: #f8f9fa;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.lead {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .program-filter {
@@ -21,6 +68,8 @@
   font-weight: 600;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .filter-btn:hover,
@@ -29,7 +78,35 @@
   color: white;
 }
 
+/* ألوان فريدة لكل تبويب */
+.filter-btn.active.business-tab,
+.business-tab:hover {
+  background: #1dbcb4;
+  border-color: #1dbcb4;
+}
+
+.filter-btn.active.financial-tab,
+.financial-tab:hover {
+  background: #1d4e91;
+  border-color: #1d4e91;
+}
+
+.filter-btn.active.development-tab,
+.development-tab:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+.filter-btn.active.all-tab,
+.all-tab:hover {
+  background: #ff9800;
+  border-color: #ff9800;
+}
+
 .program-card {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
   background: white;
   border-radius: 15px;
   overflow: hidden;
@@ -65,7 +142,6 @@
   position: absolute;
   top: 15px;
   left: 15px;
-  background: var(--primary-color);
   color: white;
   padding: 5px 15px;
   border-radius: 20px;
@@ -73,8 +149,24 @@
   font-weight: 600;
 }
 
+/* ألوان مختلفة للبادجات حسب التصنيف */
+.program-item[data-category='business'] .program-category {
+  background: #ffc115;
+}
+
+.program-item[data-category='financial'] .program-category {
+  background: #1d4e91;
+}
+
+.program-item[data-category='development'] .program-category {
+  background: #4caf50;
+}
+
 .program-content {
+  flex-grow: 1;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .program-title {
@@ -107,9 +199,10 @@
 }
 
 .program-cta {
+  flex-grow: 1;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: last baseline;
   margin-top: 20px;
 }
 
@@ -171,22 +264,4 @@
 .modal-footer {
   border-top: none;
   background: #f8f9fa;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .program-filter {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .filter-btn {
-    width: 80%;
-    margin-bottom: 10px;
-  }
-  
-  .program-cta {
-    flex-direction: column;
-    gap: 15px;
-  }
 }

@@ -260,7 +260,6 @@ p {
   box-shadow: var(--shadow, 0 4px 16px rgba(0, 0, 0, 0.07));
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
   padding: 2.5rem;
   text-align: center;
@@ -272,34 +271,14 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   transform: translateY(-5px);
 }
-.service-card {
-  padding: 2rem;
-}
-
-.service-icon {
-  width: 65px;
-  height: 65px;
-  padding: 0.75rem;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--primary-light)
-  );
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
 
 .service-icon i {
   font-size: 2rem;
   color: #fff;
 }
 
-.service-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
+.service-card p {
+  font-weight: 500;
   color: var(--secondary-color);
   margin-bottom: 1rem;
 }
@@ -308,13 +287,13 @@ p {
 .service-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 0.8rem 0;
+  margin: 0 2rem 2rem 0;
   text-align: right;
 }
 
 .service-list li {
   position: relative;
-  margin-bottom: 1 rem;
+  margin-bottom: .5rem;
   font-size: 1rem;
   line-height: 1.5;
   color: var(--text-muted, #666);
