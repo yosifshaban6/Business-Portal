@@ -1,3 +1,337 @@
+/* Bootstrap variable overrides */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+/* Primary color */
+
+:root {
+  --bs-primary: #2f8eb5;
+  --bs-secondary: #6c757d;
+  --bs-success: #28a745;
+  --bs-info: #17a2b8;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #343a40;
+  --bs-font-sans-serif: 'Tajawal', sans-serif;
+  --bs-border-radius: 0.4rem;
+  --bs-body-bg: #f4f6fa;
+  --bs-body-color: #222;
+  --nav-color: #fff;
+  --bs-emphasis-color-rgb: #fff;
+  --primary-color: #17a085;
+  --primary-light: #1dcdb4;
+  --secondary-color: #2f8eb5;
+  --text-dark: #343a40;
+  --text-light: #f8f9fa;
+  --text-muted: #6c757d;
+  --bg-light: #f8f9fa;
+  --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+  .container-fluid,
+  .container-xl {
+    max-width: 70vw;
+  }
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+}
+
+.navbar-brand {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--nav-color) !important;
+}
+
+.nav-link {
+  font-size: 16px;
+}
+
+.nav-link,
+.nav-link.active,
+.nav-link:hover {
+  font-weight: 400;
+  color: var(--nav-color) !important;
+}
+
+.navbar-toggler-icon {
+  color: var(--nav-color) !important;
+}
+
+/* Main Content */
+#programs {
+  position: relative;
+  z-index: 1;
+  color: white;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+#programs h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#programs h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+/* Programs Section Styles */
+.programs-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.lead {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.program-filter {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* ألوان فريدة لكل تبويب */
+.filter-btn.active.business-tab,
+.business-tab:hover {
+  background: #1dbcb4;
+  border-color: #1dbcb4;
+}
+
+.filter-btn.active.financial-tab,
+.financial-tab:hover {
+  background: #1d4e91;
+  border-color: #1d4e91;
+}
+
+.filter-btn.active.development-tab,
+.development-tab:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+.filter-btn.active.all-tab,
+.all-tab:hover {
+  background: #ff9800;
+  border-color: #ff9800;
+}
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  margin-bottom: 30px;
+}
+
+.program-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.program-img {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.program-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.program-card:hover .program-img img {
+  transform: scale(1.1);
+}
+
+.program-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ألوان مختلفة للبادجات حسب التصنيف */
+.program-item[data-category='business'] .program-category {
+  background: #ffc115;
+}
+
+.program-item[data-category='financial'] .program-category {
+  background: #1d4e91;
+}
+
+.program-item[data-category='development'] .program-category {
+  background: #4caf50;
+}
+
+.program-content {
+  flex-grow: 1;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+
+.program-desc {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.program-features {
+  margin-bottom: 20px;
+}
+
+.program-feature {
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.program-feature i {
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+
+.program-cta {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: last baseline;
+  margin-top: 20px;
+}
+
+.program-price {
+  font-weight: 700;
+  color: var(--secondary-color);
+  font-size: 18px;
+}
+
+.program-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.program-btn:hover {
+  background: var(--secondary-color);
+  color: white;
+}
+
+/* Program Details Modal */
+.modal-content {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: var(--primary-color);
+  color: white;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: 700;
+}
+
+.modal-body {
+  padding: 25px;
+}
+
+.modal-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-feature i {
+  color: var(--primary-color);
+  margin-left: 10px;
+  width: 20px;
+}
+
+.modal-footer {
+  border-top: none;
+  background: #f8f9fa;
+}
 /* ============================================= */
 /* ============== BASE & RESETS =============== */
 /* ============================================= */
@@ -293,7 +627,7 @@ p {
 
 .service-list li {
   position: relative;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-size: 1rem;
   line-height: 1.5;
   color: var(--text-muted, #666);
@@ -337,8 +671,11 @@ p {
 
 /* Mission Cards */
 .mission-card {
-  padding: 2.5rem;
+  border: 1px solid var(--primary-light);
+  padding: 2rem;
   text-align: center;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
 }
 
 .card-icon {
@@ -372,6 +709,9 @@ p {
 .value-card {
   padding: 2rem;
   text-align: center;
+  border: 1px solid var(--primary-light);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
 }
 
 .value-icon {
@@ -462,22 +802,21 @@ p {
 }
 
 .about-image img {
+  max-width: 25vw;
   width: 100%;
   margin-top: 2rem;
-  max-width: 45vw;
   height: auto;
-  max-height: 65vh;
+  max-height: 40vh;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   display: block;
-  margin-left: auto;
   margin-right: auto;
 }
 
 .stats-row {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 1rem;
   gap: 1rem;
 }
 
@@ -486,7 +825,7 @@ p {
   background-color: var(--bg-light);
   position: absolute;
   bottom: 5%;
-  right: 20%;
+  right: 15%;
   display: block;
 }
 
@@ -496,14 +835,14 @@ p {
 }
 
 .stat-item h3 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-color);
   margin: 0;
 }
 
 .stat-item p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin: 0;
   color: var(--text-muted);
 }
@@ -537,7 +876,6 @@ p {
 
 /* Services Section */
 #services {
-  background: var(--bg-light);
   padding: 80px 0;
 }
 
@@ -573,6 +911,10 @@ p {
 }
 
 /* Services Section */
+#paths {
+  padding: 80px 0;
+}
+
 .path-card {
   overflow: hidden;
   border-radius: 12px;

@@ -1,34 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Business Portal - بوابة الأعمال</title>
     <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
 
-    <!-- Bootstrap CSS (LTR & RTL included, you already have these) -->
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
     />
     <link
-      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.rtl.min.css"
-      integrity="sha384-Xbg45MqvDIk1e563NLpGEulpX6AvL404DP+/iCgW9eFa2BqztiwTexswJo2jLMue"
-      crossorigin="anonymous"
+      rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
 
-    <!-- Custom Bootstrap overrides and font (main.css) -->
-    <link rel="stylesheet" href="css/main.css" />
-
-    <!-- Site styles (your main stylesheet) -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Header Section -->
@@ -50,8 +42,8 @@
         <div
           class="container-fluid py-3 py-md-0 container-xl position-relative d-flex align-items-center justify-content-between"
         >
-          <a class="navbar-brand p-0 m-0" href="index.html"
-            ><img
+          <a class="navbar-brand p-0 m-0" href="#home">
+            <img
               src="./images/logo.png"
               alt="Business Portal Logo"
               class="logo"
@@ -62,27 +54,22 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-0 me-auto gap-3">
               <div class="nav-link-wrapper">
-                <a class="nav-link" aria-current="page" href="about.html"
-                  >من نحن</a
-                >
+                <a class="nav-link" href="#about">من نحن</a>
               </div>
               <div class="nav-link-wrapper">
-                <a class="nav-link" href="paths.html">خدماتنا</a>
+                <a class="nav-link" href="#services">خدماتنا</a>
               </div>
               <div class="nav-link-wrapper">
-                <a class="nav-link" href="programs.html">البرامج</a>
+                <a class="nav-link" href="#programs">البرامج</a>
               </div>
               <div class="nav-link-wrapper">
-                <a class="nav-link" href="partners.html">الحلفاء</a>
+                <a class="nav-link" href="#paths">المسارات</a>
               </div>
               <div class="nav-link-wrapper">
                 <button class="cta-button nav-cta">إبدأ رحلتك</button>
@@ -93,17 +80,23 @@
       </nav>
 
       <!-- Hero Section -->
-      <main id="hero" class="py-5 px-2 px-md-3">
+      <main id="home" class="py-5 px-2 px-md-3">
         <div class="container-fluid container-xl h-100">
           <div class="row align-items-center justify-content-center h-100">
             <div class="col-12 col-lg-10 text-center">
               <p
-                style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem"
+                style="
+                  color: var(--text-light);
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  margin-bottom: 1rem;
+                "
               >
                 مرحبا بك في
               </p>
               <h1
                 style="
+                  font-size: 3.5rem;
                   background: linear-gradient(
                     135deg,
                     var(--primary-light),
@@ -113,6 +106,7 @@
                   background-clip: text;
                   color: transparent;
                   font-weight: 900;
+                  margin: 1.5rem 0;
                 "
               >
                 بزنس بورتال
@@ -123,12 +117,12 @@
                   margin-bottom: 1.1rem;
                   max-width: 1100px;
                   font-weight: 600;
+                  color: var(--text-light);
                 "
               >
                 نحن بوابة اعمال وبيئة استشارية / تنفيذية لإرشاد وتنفيذ الأفكار
                 والطموحات .
               </p>
-
               <p style="font-size: 1.4rem; color: var(--text-light)">
                 بزنس بورتال بوابة اعمال لتنمية واستثمار العقول / الأموال /
                 الأعمال.
@@ -142,22 +136,44 @@
     <!-- About Section -->
     <section id="about" class="py-5">
       <div class="container-fluid container-xl">
-        <div class="flex justify-content-center align-items-center mb-5">
-          <div class="mb-4 mb-lg-0">
-            <div class="about-content">
+        <div class="row justify-content-between align-items-center mb-5">
+          <div class="col-lg-6 align-items-center mb-4 mb-lg-0">
+            <div class="about-content text-center">
               <h2 class="section-title mb-4">من نحن</h2>
               <p class="mb-0 mb-lg-3">
                 فريق استشاري متخصص في استثمار الأفكار .. وتنمية وإدارة المال
                 والأعمال .
               </p>
             </div>
+            <!-- Mission & Vision -->
+            <div class="row mt-5">
+              <div class="col-lg-6 mb-4">
+                <div class="mission-card">
+                  <h3>رؤيتنا</h3>
+                  <p>
+                    نسعى لأن نكون الشريك الاستراتيجي الأول للأفراد والشركات في
+                    رحلتهم نحو النجاح والتميز في عالم الأعمال.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <div class="mission-card">
+                  <h3>مهمتنا</h3>
+                  <p>
+                    تقديم حلول مبتكرة وخدمات متخصصة تساعد عملائنا على تحقيق
+                    أهدافهم وتطوير أعمالهم بشكل مستدام.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
+          <div class="col-lg-5">
             <div class="about-image">
               <img
                 src="./images/hero-img.jpg"
                 alt="Business Portal Team"
-                class="img-fluid rounded"
+                class="rounded"
+                style="width: 100%; height: auto; border-radius: 12px"
               />
               <div class="stats-row experience-stats rounded">
                 <div class="stat-item">
@@ -168,11 +184,64 @@
             </div>
           </div>
         </div>
+
+        <!-- Values -->
+        <div class="row text-center mt-5">
+          <div class="col-12 mt-5">
+            <h2 class="section-title">قيمنا</h2>
+            <p class="lead">القيم التي تحكم عملنا وتوجه رحلتنا</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h4>الالتزام</h4>
+              <p>نلتزم بتحقيق أهداف عملائنا ونجاحهم</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h4>الابتكار</h4>
+              <p>نبتكر حلولاً جديدة ومبتكرة للتحديات</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>الموثوقية</h4>
+              <p>نحافظ على أعلى معايير الجودة والموثوقية</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h4>التعاون</h4>
+              <p>نعمل معاً كفريق واحد لتحقيق النجاح</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="py-5 bg-light">
       <div class="container-fluid container-xl">
+        <div class="row text-center mb-5">
+          <div class="col-12">
+            <h1 class="section-title">خدماتنا</h1>
+            <p class="lead">نقدم مجموعة متنوعة من الخدمات لدعم عملائنا في تحقيق أهدافهم.</p>
+          </div>
+        </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="service-card">
@@ -195,7 +264,6 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="service-card">
               <h3>برامجنا</h3>
-
               <p class="mb-3 text-start">
                 تقدم بوابة الاعمال باقة متكاملة من البرامج بلغت 12 برنامجا
                 تخصصيا . تم توزيعها كالتالي :
@@ -206,9 +274,9 @@
                 <li>4 برامج متخصصة لرفد مسار الأعمال</li>
               </ul>
               <div class="flex-grow-1 d-flex flex-column justify-content-end">
-                <a href="./programs.html" class="service-button cta cta-button">
-                  قائمة البرامج
-                </a>
+                <a href="#programs" class="service-button cta cta-button"
+                  >قائمة البرامج</a
+                >
               </div>
             </div>
           </div>
@@ -226,9 +294,585 @@
                 <li>بناء نظم الاستثمار الرشيدة والشفافة</li>
               </ul>
               <div class="flex-grow-1 d-flex flex-column justify-content-end">
-                <a href="./partners.html" class="service-button cta cta-button">
-                  انضم الينا
-                </a>
+                <a href="#partners" class="service-button cta cta-button"
+                  >انضم الينا</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="section-title">البرامج</h1>
+            <p class="lead">اختر البرنامج الذي يناسب أهدافك</p>
+          </div>
+        </div>
+
+        <!-- Program Filters -->
+        <div class="row">
+          <div class="col-12">
+            <div class="program-filter">
+              <button class="filter-btn active" data-filter="all">
+                جميع البرامج
+              </button>
+              <button class="filter-btn" data-filter="business">
+                برامج مسار الأفكار
+              </button>
+              <button class="filter-btn" data-filter="financial">
+                برامج المسار المالي
+              </button>
+              <button class="filter-btn" data-filter="development">
+                برامج مسار الأعمال
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Programs Grid -->
+        <div class="row row-gap-3 row-gap-md-5 programs-container">
+          <!-- عقول وأموال -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/1dbcb4/ffffff?text=MONEY+AND+MINDS"
+                  alt="عقول وأموال"
+                />
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">عقول وأموال</h3>
+                <p class="program-desc">
+                  بيئة تفاعلية تعمل على ربط أصحاب الأفكار المتميزة بأصحاب
+                  الأموال والمستثمرين الباحثين عن الفرص الذكية.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>6 أشهر</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,200 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="1"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUSINESS GROUP -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/1d4e91/ffffff?text=BUSINESS+GROUP"
+                  alt="BUSINESS GROUP"
+                />
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">BUSINESS GROUP</h3>
+                <p class="program-desc">
+                  برنامج متخصص في تأسيس المجموعات والتكتلات التجارية ذات رأس
+                  المال الصغير والمتناهي الصغر.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>6 أشهر</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">950 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="2"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- منتجون -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/4caf50/ffffff?text=PRODUCERS"
+                  alt="منتجون"
+                />
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">منتجون</h3>
+                <p class="program-desc">
+                  برنامج متخصص في بناء الأفراد والعائلات المنتجة وتحويلها إلى
+                  ماركات تجارية فعالة.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>10 أشهر</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,500 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="3"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- الجائزة -->
+          <div
+            class="col-md-6 col-lg-4 program-item"
+            data-category="development"
+          >
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/ff9800/ffffff?text=THE+AWARD"
+                  alt="الجائزة"
+                />
+                <span class="program-category">التطوير الشخصي</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">الجائزة</h3>
+                <p class="program-desc">
+                  برنامج إعلامي ذو شقين (ترفيهي/تعليمي) يهدف إلى نشر وتعزيز
+                  ثقافة العمل الحر.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>10 أشهر</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">700 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="4"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- الأمان المالي IDS-7 -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="financial">
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/9c27b0/ffffff?text=FINANCIAL+SECURITY+IDS-7"
+                  alt="الأمان المالي IDS-7"
+                />
+                <span class="program-category">التنمية المالية</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">الأمان المالي IDS-7</h3>
+                <p class="program-desc">
+                  مخيم 3*1 (تأهيلي/سياحي/ترفيهي) يهدف إلى تخريج خبراء متخصصون في
+                  الأمان الاستثماري وفن اقتناص الفرص.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>4 أيام</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,000 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="5"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUSINESS FAMILY -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/e91e63/ffffff?text=BUSINESS+FAMILY"
+                  alt="BUSINESS FAMILY"
+                />
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">BUSINESS FAMILY</h3>
+                <p class="program-desc">
+                  برنامج متخصص في بناء التكتلات المالية والتجارية العائلية.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>3 أيام</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,100 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="6"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUSINESS DRIVER -->
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/607d8b/ffffff?text=BUSINESS+DRIVER"
+                  alt="BUSINESS DRIVER"
+                />
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">BUSINESS DRIVER</h3>
+                <p class="program-desc">
+                  برنامج متخصص في فنون ومهارات قيادة الأعمال للمبتدئين.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>18 ساعة تدريبية</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,300 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="7"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- الخارطة - THE MAP -->
+          <div
+            class="col-md-6 col-lg-4 program-item"
+            data-category="development"
+          >
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/795548/ffffff?text=THE+MAP"
+                  alt="الخارطة - THE MAP"
+                />
+                <span class="program-category">التطوير الشخصي</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">الخارطة - THE MAP</h3>
+                <p class="program-desc">
+                  برنامج متخصص في معرفة خارطة المسار الصحيح في مجال المال
+                  والأعمال (من الفكرة إلى الإستدامة) وخطوات تطبيقها الذكية.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>22 ساعة تدريبية</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,400 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="8"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- kards 4 -->
+          <div
+            class="col-md-6 col-lg-4 program-item"
+            data-category="development"
+          >
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/3f51b5/ffffff?text=KARDS+4"
+                  alt="kards 4"
+                />
+                <span class="program-category">التطوير الشخصي</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">kards 4</h3>
+                <p class="program-desc">
+                  برنامج استثماري عبارة عن أربعة كروت كل كرت يحتوي على لون متخصص
+                  في باقة خدمات مختلفة.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>مفتوح</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">900 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="9"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4 program-item"
+            data-category="development"
+          >
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/009688/ffffff?text=THE+SCOPE"
+                  alt="المنظار - THE SCOPE"
+                />
+                <span class="program-category">التطوير الشخصي</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">المنظار - THE SCOPE</h3>
+                <p class="program-desc">
+                  برنامج متخصص في تخريج خبراء في رصد الظواهر السلبية المجتمعية
+                  وابتكار حلول لها.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>12 يوم</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,200 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="10"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 program-item" data-category="financial">
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/ff5722/ffffff?text=1+PLUS"
+                  alt="برنامج 1 + PLUS"
+                />
+                <span class="program-category">التنمية المالية</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">برنامج 1 + PLUS</h3>
+                <p class="program-desc">
+                  برنامج التأهيل الاستثماري للأفراد وبناء المحافظ المالية
+                  الاقتصادية.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>14 ساعة تدريبية</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,100 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="11"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 program-item" data-category="business">
+            <div class="program-card">
+              <div class="program-img">
+                <img
+                  src="https://placehold.co/600x400/673ab7/ffffff?text=BUSINESS+ACADEMY"
+                  alt="BUSINESS ACADEMY"
+                />
+                <span class="program-category">تطوير الأعمال</span>
+              </div>
+              <div class="program-content">
+                <h3 class="program-title">BUSINESS ACADEMY</h3>
+                <p class="program-desc">
+                  برنامج إعلامي + تعليمي عبارة عن منهج تعليم تفاعلي في فنون
+                  إدارة المال والأعمال.
+                </p>
+                <div class="program-features">
+                  <div class="program-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>6 أشهر</span>
+                  </div>
+                </div>
+                <div class="program-cta">
+                  <div class="program-price">1,800 ر.س</div>
+                  <a
+                    href="#"
+                    class="program-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#programModal"
+                    data-program="12"
+                    >التفاصيل</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="paths">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center mb-2">
+          <div class="col-12 col-lg-8">
+            <h1
+            class="section-title mb-3"
+          >
+            المسارات
+          </h1>
+          <p class="lead text-muted">
+            تقدم بزناس بورتال باقة من الخدمات والبرامج المتقدمة في مجال المال
+            والأعمال من خلال 3 مسارات متخصصة
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center mb-5">
+        <div class="col-12 col-md-4 d-flex">
+          <div
+            class="path-card flex-fill d-flex flex-column align-items-center text-center"
+          >
+            <img
+              src="./images/ideas-path.jpg"
+              alt="مسار الأفكار"
+              class="mb-3"
+            />
+            <div
+              class="path-content flex-grow-1 d-flex flex-column justify-content-between"
+            >
+              <h3 class="fw-bold mb-2">المسار الأول: مسار الأفكار</h3>
+              <p class="text-muted mb-4">
+                ويشمل هذا المسار دراسة الفكرة ومدى ملائمتها لتصبح مشروعا . بحيث
+                يتم دراسة نقاط ضعفها وقوتها ومن ثم توثيقها ومن ثم استحقاقها
+                للنقل الى مسارات التنفيذ والتمويل .
+              </p>
+              <div class="nav-link-wrapper">
+                <button class="cta-button">إبدأ مسارك</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 d-flex">
+          <div
+            class="path-card flex-fill d-flex flex-column align-items-center text-center"
+          >
+            <img
+              src="./images/money-path.jpg"
+              alt="مسار الأموال"
+              class="mb-3"
+            />
+            <div
+              class="path-content flex-grow-1 d-flex flex-column justify-content-between"
+            >
+              <h3 class="fw-bold mb-2">المسار الثاني: مسار الأموال</h3>
+              <p class="text-muted mb-4">
+                وفي هذا المسار يتم بلورة المشروعات المستحقة للتمويل والتنفيذ إما
+                عبر تمويلات وشراكات مباشرة أو عبر التكتلات التمويلية .
+              </p>
+              <div class="nav-link-wrapper">
+                <button class="cta-button">إبدأ مسارك</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 d-flex">
+          <div
+            class="path-card flex-fill d-flex flex-column align-items-center text-center"
+          >
+            <img
+              src="./images/business-path.jpg"
+              alt="مسار الأعمال"
+              class="mb-3"
+            />
+            <div
+              class="path-content flex-grow-1 d-flex flex-column justify-content-between"
+            >
+              <h3 class="fw-bold mb-2">المسار الثالث: مسار الأعمال</h3>
+              <p class="text-muted mb-4">
+                وهو مسار تنفيذي ويشمل المناطق الاربع للأعمال : الإعداد والتجهيز
+                / التنفيذ والإنطلاق / الإدارة والتشغيل / الاستدامة والتطوير
+              </p>
+              <div class="nav-link-wrapper">
+                <button class="cta-button">إبدأ مسارك</button>
               </div>
             </div>
           </div>
@@ -254,7 +898,7 @@
       <div class="container-fluid container-xl">
         <div class="row justify-content-between">
           <div class="col-lg-3 mb-4">
-            <a href="index.html" class="footer-logo-link">
+            <a href="#home" class="footer-logo-link">
               <img
                 src="./images/logo.png"
                 alt="Business Portal Logo"
@@ -267,10 +911,10 @@
           <div class="col-lg-3 mb-4">
             <h5>روابط سريعة</h5>
             <ul class="list-unstyled">
-              <li><a href="about.html">من نحن</a></li>
-              <li><a href="paths.html">المسارات</a></li>
-              <li><a href="programs.html">البرامج</a></li>
-              <li><a href="partners.html">الحلفاء</a></li>
+              <li><a href="#about">من نحن</a></li>
+              <li><a href="#services">المسارات</a></li>
+              <li><a href="#programs">البرامج</a></li>
+              <li><a href="#partners">الحلفاء</a></li>
             </ul>
           </div>
           <div class="col-lg-3 mb-4">
@@ -289,12 +933,69 @@
       </div>
     </footer>
 
-    <!-- Custom JavaScript -->
-    <script src="js/script.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Program Modal -->
+    <div
+      class="modal fade"
+      id="programModal"
+      tabindex="-1"
+      aria-labelledby="programModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="programModalLabel">تفاصيل البرنامج</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img
+                  id="modal-program-img"
+                  src=""
+                  alt="برنامج"
+                  class="img-fluid rounded mb-3"
+                />
+                <div class="program-price mb-3" id="modal-program-price"></div>
+              </div>
+              <div class="col-md-6">
+                <h3 id="modal-program-title"></h3>
+                <p id="modal-program-desc" class="text-muted"></p>
+
+                <h5 class="mt-4">مميزات البرنامج:</h5>
+                <div id="modal-program-features"></div>
+
+                <h5 class="mt-4">محاور البرنامج:</h5>
+                <ul
+                  id="modal-program-topics"
+                  class="list-group list-group-flush"
+                ></ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="program-btn bg-secondary"
+              data-bs-dismiss="modal"
+            >
+              إغلاق
+            </button>
+            <button type="button" class="program-btn">سجل الآن</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./script.js"></script>
+    <script></script>
   </body>
 </html>
