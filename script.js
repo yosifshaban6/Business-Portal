@@ -510,11 +510,15 @@ document.addEventListener('DOMContentLoaded', function () {
   backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
   backToTopButton.className = 'back-to-top';
   backToTopButton.style.cssText = `
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
         position: fixed;
-        bottom: 20px;
+        bottom: 50px;
         right: 20px;
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
         color: white;
         border: none;
@@ -529,11 +533,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.body.appendChild(backToTopButton);
 
+  // WhatsApp sticky button
+  const whatsappButton = document.createElement('a');
+  whatsappButton.href = 'https://wa.me/+905075203433';
+  whatsappButton.target = '_blank';
+  whatsappButton.rel = 'noopener noreferrer';
+  whatsappButton.className = 'whatsapp-sticky';
+  whatsappButton.innerHTML = `<i class="fab fa-whatsapp"></i>`;
+
+  whatsappButton.style.cssText = `
+    text-decoration: none;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    z-index: 2000;
+    cursor: pointer;
+    transition: background 0.2s, bottom 0.3s;
+  `;
+  whatsappButton.addEventListener('mouseenter', () => {
+    whatsappButton.style.background = '#128c7e';
+  });
+  whatsappButton.addEventListener('mouseleave', () => {
+    whatsappButton.style.background = '#25d366';
+  });
+
+  document.body.appendChild(whatsappButton);
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
       backToTopButton.classList.add('visible');
+      whatsappButton.style.bottom = '120px';
     } else {
       backToTopButton.classList.remove('visible');
+      whatsappButton.style.bottom = '50px';
     }
   });
 
@@ -576,42 +618,11 @@ document.addEventListener('DOMContentLoaded', function () {
           opacity: 0;
           transition: opacity 0.3s ease;
         }
+
+        .back-to-top.visible {
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
       `;
   document.head.appendChild(style);
-
-  // WhatsApp sticky button
-  const whatsappButton = document.createElement('a');
-  whatsappButton.href = 'https://wa.me/+905075203433';
-  whatsappButton.target = '_blank';
-  whatsappButton.rel = 'noopener noreferrer';
-  whatsappButton.className = 'whatsapp-sticky';
-  whatsappButton.innerHTML = `<i class="fab fa-whatsapp"></i>`;
-
-  whatsappButton.style.cssText = `
-    text-decoration: none;
-    position: fixed;
-    bottom: 50px;
-    right: 20px;
-    width: 55px;
-    height: 55px;
-    background: #25d366;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    z-index: 1001;
-    cursor: pointer;
-    transition: background 0.2s;
-  `;
-  whatsappButton.addEventListener('mouseenter', () => {
-    whatsappButton.style.background = '#128c7e';
-  });
-  whatsappButton.addEventListener('mouseleave', () => {
-    whatsappButton.style.background = '#25d366';
-  });
-
-  document.body.appendChild(whatsappButton);
 });
