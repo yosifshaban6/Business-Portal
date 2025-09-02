@@ -212,7 +212,7 @@ const programs = {
   },
   12: {
     title: 'BUSINESS ACADEMY',
-    desc: 'برrogram إعلامي + تعليمي عبارة عن منهج تعليم تفاعلي في فنون إدارة المال والأعمال.',
+    desc: 'برنامج إعلامي + تعليمي عبارة عن منهج تعليم تفاعلي في فنون إدارة المال والأعمال.',
     price: '1,800 ر.س',
     image: 'https://placehold.co/600x400/673ab7/ffffff?text=BUSINESS+ACADEMY',
     features: [
@@ -233,6 +233,17 @@ const programs = {
 
 // Program filter functionality
 document.addEventListener('DOMContentLoaded', function () {
+  // Video handling
+  const video = document.querySelector('.header-video');
+  if (video) {
+    video.addEventListener('canplay', () => {
+      console.log('Video can play');
+      video.playbackRate = 0.5;
+    });
+    video.addEventListener('error', (e) => console.error('Video error:', e));
+  }
+
+  // Program filter functionality
   const filterButtons = document.querySelectorAll('.filter-btn');
   const programItems = document.querySelectorAll('.program-item');
 
@@ -270,7 +281,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('modal-program-title').textContent = program.title;
     document.getElementById('modal-program-desc').textContent = program.desc;
-    document.getElementById('modal-program-price').textContent = program.price;
     document.getElementById('modal-program-img').src = program.image;
 
     // Set features
@@ -293,26 +303,6 @@ document.addEventListener('DOMContentLoaded', function () {
       topicsContainer.appendChild(topicEl);
     });
   });
-});
-
-// Main JavaScript file for Business Portal
-
-document.addEventListener('DOMContentLoaded', function () {
-  // Video handling
-  const video = document.querySelector('.header-video');
-  if (video) {
-    video.addEventListener('loadstart', () =>
-      console.log('Video loading started')
-    );
-    video.addEventListener('canplay', () => {
-      console.log('Video can play');
-      video.playbackRate = 0.5;
-    });
-    video.addEventListener('error', (e) => console.error('Video error:', e));
-    video.addEventListener('loadeddata', () =>
-      console.log('Video data loaded')
-    );
-  }
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -324,6 +314,12 @@ document.addEventListener('DOMContentLoaded', function () {
           behavior: 'smooth',
           block: 'start',
         });
+
+        // Update URL hash
+        history.pushState(null, null, this.getAttribute('href'));
+
+        // Update active nav link
+        updateActiveNavLink();
       }
     });
   });
@@ -357,14 +353,42 @@ document.addEventListener('DOMContentLoaded', function () {
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.9)';
-        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.classList.add('scrolled');
       } else {
-        navbar.style.background = 'transparent';
-        navbar.style.backdropFilter = '';
+        navbar.classList.remove('scrolled');
+      }
+
+      // Update active nav link based on scroll position
+      updateActiveNavLink();
+    });
+  }
+
+  // Active navigation based on scroll position
+  function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    let currentSection = '';
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (window.scrollY >= sectionTop - 100) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
       }
     });
   }
+
+  // Initialize active nav link
+  updateActiveNavLink();
 
   // CTA button interactions
   document.querySelectorAll('.cta-button').forEach((button) => {
@@ -491,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function () {
         right: 20px;
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #17a085, #1dcdb4);
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
         color: white;
         border: none;
         border-radius: 50%;
@@ -501,17 +525,15 @@ document.addEventListener('DOMContentLoaded', function () {
         transition: all 0.3s ease;
         z-index: 1000;
         box-shadow: 0 4px 15px rgba(29, 205, 180, 0.3);
-    `;
+      `;
 
   document.body.appendChild(backToTopButton);
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
-      backToTopButton.style.opacity = '1';
-      backToTopButton.style.visibility = 'visible';
+      backToTopButton.classList.add('visible');
     } else {
-      backToTopButton.style.opacity = '0';
-      backToTopButton.style.visibility = 'hidden';
+      backToTopButton.classList.remove('visible');
     }
   });
 
@@ -526,76 +548,70 @@ document.addEventListener('DOMContentLoaded', function () {
   const style = document.createElement('style');
   style.textContent = `
         .cta-button {
-            position: relative;
-            overflow: hidden;
+          position: relative;
+          overflow: hidden;
         }
         
         .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(0);
-            animation: ripple-animation 0.6s linear;
-            pointer-events: none;
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(0);
+          animation: ripple-animation 0.6s linear;
+          pointer-events: none;
         }
         
         @keyframes ripple-animation {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
         }
         
         body.loaded {
-            opacity: 1;
+          opacity: 1;
         }
         
         body {
-            opacity: 0;
-            transition: opacity 0.3s ease;
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
-    `;
+      `;
   document.head.appendChild(style);
+
+  // WhatsApp sticky button
+  const whatsappButton = document.createElement('a');
+  whatsappButton.href = 'https://wa.me/+905075203433';
+  whatsappButton.target = '_blank';
+  whatsappButton.rel = 'noopener noreferrer';
+  whatsappButton.className = 'whatsapp-sticky';
+  whatsappButton.innerHTML = `<i class="fab fa-whatsapp"></i>`;
+
+  whatsappButton.style.cssText = `
+    text-decoration: none;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    z-index: 1001;
+    cursor: pointer;
+    transition: background 0.2s;
+  `;
+  whatsappButton.addEventListener('mouseenter', () => {
+    whatsappButton.style.background = '#128c7e';
+  });
+  whatsappButton.addEventListener('mouseleave', () => {
+    whatsappButton.style.background = '#25d366';
+  });
+
+  document.body.appendChild(whatsappButton);
 });
-
-// Utility functions
-const Utils = {
-  // Debounce function
-  debounce: function (func, wait, immediate) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        timeout = null;
-        if (!immediate) func(...args);
-      };
-      const callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func(...args);
-    };
-  },
-
-  // Throttle function
-  throttle: function (func, limit) {
-    let inThrottle;
-    return function () {
-      const args = arguments;
-      const context = this;
-      if (!inThrottle) {
-        func.apply(context, args);
-        inThrottle = true;
-        setTimeout(() => (inThrottle = false), limit);
-      }
-    };
-  },
-
-  // Format number with commas
-  formatNumber: function (num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  },
-};
-
-// Export for use in other files if needed
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = Utils;
-}
