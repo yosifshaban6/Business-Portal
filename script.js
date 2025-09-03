@@ -539,7 +539,12 @@ document.addEventListener('DOMContentLoaded', function () {
   whatsappButton.target = '_blank';
   whatsappButton.rel = 'noopener noreferrer';
   whatsappButton.className = 'whatsapp-sticky';
-  whatsappButton.innerHTML = `<i class="fab fa-whatsapp"></i>`;
+  whatsappButton.innerHTML = `
+    <span class="wa-circle"></span>
+    <span class="wa-circle wa2"></span>
+    <span class="wa-circle wa3"></span>
+    <i class="fab fa-whatsapp"></i>
+  `;
 
   whatsappButton.style.cssText = `
     text-decoration: none;
@@ -555,7 +560,7 @@ document.addEventListener('DOMContentLoaded', function () {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 8px 20px 0 rgba(37,211,102,0.5), 0 0 20px 10px #25d36633;
     z-index: 2000;
     cursor: pointer;
     transition: background 0.2s, bottom 0.3s;
@@ -589,40 +594,84 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add ripple effect styles
   const style = document.createElement('style');
   style.textContent = `
-        .cta-button {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .ripple {
-          position: absolute;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.3);
-          transform: scale(0);
-          animation: ripple-animation 0.6s linear;
-          pointer-events: none;
-        }
-        
-        @keyframes ripple-animation {
-          to {
-            transform: scale(4);
-            opacity: 0;
-          }
-        }
-        
-        body.loaded {
-          opacity: 1;
-        }
-        
-        body {
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
+    .cta-button {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0);
+      animation: ripple-animation 0.6s linear;
+      pointer-events: none;
+    }
+    
+    @keyframes ripple-animation {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+    
+    body.loaded {
+      opacity: 1;
+    }
+    
+    body {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-        .back-to-top.visible {
-          opacity: 1 !important;
-          visibility: visible !important;
-        }
-      `;
+    .back-to-top.visible {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    /* WhatsApp sending circles animation */
+    .whatsapp-sticky {
+      position: fixed;
+      overflow: visible;
+      box-shadow: 0 8px 20px 0 rgba(37,211,102,0.5), 0 0 20px 10px #25d36633 !important;
+      z-index: 2000;
+      animation: whatsapp-shadow-pulse 1.5s infinite alternate;
+    }
+    .whatsapp-sticky .wa-circle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #25d36644;
+      transform: translate(-50%, -50%) scale(1);
+      pointer-events: none;
+      opacity: 0.7;
+      z-index: -1;
+      animation: wa-send 1.5s infinite;
+    }
+    .whatsapp-sticky .wa-circle.wa2 {
+      animation-delay: 0.5s;
+      opacity: 0.5;
+    }
+    .whatsapp-sticky .wa-circle.wa3 {
+      animation-delay: 1s;
+      opacity: 0.3;
+    }
+    @keyframes wa-send {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+      }
+      70% {
+        opacity: 0.2;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+      }
+    }
+    `;
   document.head.appendChild(style);
 });
